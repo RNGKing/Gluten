@@ -4,7 +4,7 @@ import gleam/erlang/process.{Pid}
 pub fn new() -> Pid
 
 @external(erlang, "eg_pdf", "set_page")
-pub fn set_page(pid: Pid, page_no: Int) -> Int
+pub fn set_page(pid: Pid, page_no: Int) -> Nil
 
 @external(erlang, "eg_pdf", "delete")
 pub fn delete(pid: Pid) -> Nil
@@ -14,3 +14,6 @@ pub fn set_pagesize(pid: Pid, width: Int, height: Int) -> Nil
 
 @external(erlang, "eg_pdf", "set_font")
 pub fn set_font(pid: Pid, font_name: String, size: Int) -> Nil
+
+@external(erlang, "eg_pdf", "export")
+pub fn export_pdf(pid: Pid) -> #(BitString, Int)
