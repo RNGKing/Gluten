@@ -1,6 +1,7 @@
 import gleam/erlang/process.{type Pid}
 import gleam/erlang/charlist
 import gleam/erlang/file.{type Reason}
+//import gleam/atom.{Atom}
 import gluten/bindings/eg_pdf
 import gluten/bindings/eg_pdf_lib
 import gluten/data_types.{type FontDefinition, type PageSize, type Point}
