@@ -1,7 +1,6 @@
 import gleam/erlang/process.{type Pid}
 import gleam/erlang/charlist
 import gleam/erlang/file.{type Reason}
-//import gleam/atom.{Atom}
 import gluten/bindings/eg_pdf
 import gluten/bindings/eg_pdf_lib
 import gluten/data_types.{type FontDefinition, type PageSize, type Point}
@@ -37,10 +36,6 @@ pub fn move_and_show(pdf: PDF, position: Point, text: String) -> PDF {
   eg_pdf_lib.move_and_show(pdf.pid, position.x, position.y, characters)
   pdf
 }
-
-//pub fn show_grid(pdf: PDF, size: Atom) {
-// eg_pdf_lib.show_grid(pdf.pid, size)
-//}
 
 pub fn export_pdf(pdf: PDF) -> BitArray {
   eg_pdf.export_pdf(pdf.pid).0
