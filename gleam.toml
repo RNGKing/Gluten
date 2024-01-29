@@ -14,6 +14,7 @@ gleam = ">= 0.32.0"
 gleam_stdlib = "~> 0.30"
 erlguten = "~> 1.0"
 gleam_erlang = "~> 0.20"
+simplifile = "~> 1.1"
 
 [dev-dependencies]
-gleeunit = "~> 0.10"
+gleeunit = "~> 1.0"

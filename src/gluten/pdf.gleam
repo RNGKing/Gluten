@@ -1,6 +1,6 @@
 import gleam/erlang/process.{type Pid}
 import gleam/erlang/charlist
-import gleam/erlang/file.{type Reason}
+import simplifile as file
 import gluten/bindings/eg_pdf
 import gluten/bindings/eg_pdf_lib
 import gluten/data_types.{type FontDefinition, type PageSize, type Point}
@@ -48,8 +48,8 @@ pub fn delete_pdf(pdf: PDF) {
 pub fn write_pdf_to_file(
   input_data: BitArray,
   uri: String,
-) -> Result(Nil, Reason) {
-  file.write_bits(input_data, uri)
+) -> Result(Nil, file.FileError) {
+  file.write_bits(uri, input_data)
 }
 
 pub fn get_string_width(
@@ -60,4 +60,21 @@ pub fn get_string_width(
   let font: charlist.Charlist = charlist.from_string(font_info.font_name)
   let test_charlist: charlist.Charlist = charlist.from_string(test_string)
   eg_pdf.get_string_width(pdf.pid, font, font_info.point_size, test_charlist)
+}
+
+pub fn set_author(pdf: PDF, author: String) -> PDF {
+  todo
+  // Convert the author to Charlist
+}
+
+pub fn set_title(pdf: PDF, title: String) -> PDF {
+  todo
+}
+
+pub fn set_subject(pdf: PDF, subject: String) -> PDF {
+  todo
+}
+
+pub fn set_keywords(pdf: PDF, keywords: List(String)) -> PDF {
+  todo
 }
